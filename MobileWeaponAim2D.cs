@@ -20,18 +20,19 @@ namespace MoreMountains.TopDownEngine
         /*for mobile for each position, if the position is not on the gamepad, use that touch*/
         //all of the ui buttons MUST BE ANCHORED to prevent these values from being erroneous - this way when the screen size varies, the anchors value still remains the same from the extremities of the screen
         #if UNITY_ANDROID || UNITY_IPHONE
-          int JoyPad = 350; // Joypad area
-          int XYBATopY = 386;  // XYBA gamepad Y area
-          int XYBALeftX = (int)Screen.width - 450; // XYBA gamepad X area
-          int PauseY = (int)Screen.height - 275; // Pause Area
-          int InvX = 330; // INV Area
+          int JoyPad = 310; // bottom left joypad area
+          int XYBATopY = 360; // bottom right XYBA area Y
+          int XYBALeftX = (int)Screen.width - 350; // bottom right XYBA area X
+          int PauseY = (int)Screen.height - 250; // top left pause area y
+          int PauseX = 225; // top left pause area x
+          int InvX = (int)Screen.width - 300; // Top right inventory area X
           for(int i = 0; i < Input.touchCount; i++)
           {
             if (Input.GetTouch(i).position.x>JoyPad && Input.GetTouch(i).position.x<XYBALeftX && Input.GetTouch(i).position.y<XYBATopY)
               { _mousePosition = Input.GetTouch(i).position; }
             else if (Input.GetTouch(i).position.y>=XYBATopY && Input.GetTouch(i).position.y<=PauseY)
               { _mousePosition = Input.GetTouch(i).position; }
-            else if (Input.GetTouch(i).position.y>PauseY && Input.GetTouch(i).position.x>InvX)
+            else if (Input.GetTouch(i).position.y>PauseY && Input.GetTouch(i).position.x>PauseX && Input.GetTouch(i).position.x<InvX)
               { _mousePosition = Input.GetTouch(i).position; }
           }
         #else
