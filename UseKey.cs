@@ -10,32 +10,32 @@ using MoreMountains.TopDownEngine;
 public class UseKey : MonoBehaviour
 {
 
-  Inventory[] allinventories;
-  Inventory inventory;
+Inventory[] allinventories;
+Inventory inventory;
 
-    void Start()
-    {
-      allinventories = GameObject.Find("Frog Managers").GetComponentsInChildren<Inventory>();
-      for (int i = 0; i < allinventories.Length; i++)
-        {
-          if (allinventories[i].InventoryType == (Inventory.InventoryTypes)Inventory.InventoryTypes.Main) //access main inv
-          {
-            inventory = allinventories[i];
-          }
-        }
-    }
+void Start()
+{
+	allinventories = GameObject.Find("Frog Managers").GetComponentsInChildren<Inventory>();
+	for (int i = 0; i < allinventories.Length; i++)
+	{
+		if (allinventories[i].InventoryType == (Inventory.InventoryTypes)Inventory.InventoryTypes.Main) //access main inv
+		{
+			inventory = allinventories[i];
+		}
+	}
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
+// Update is called once per frame
+void Update()
+{
+}
 
-    public void UseKeyAction(string itemName)
-    {
-      List<int> list = inventory.InventoryContains(itemName);
-      if (list.Count > 0)
-      {
-        inventory.RemoveItem(list[list.Count - 1], 1);
-      }
-    }
+public void UseKeyAction(string itemName)
+{
+	List<int> list = inventory.InventoryContains(itemName);
+	if (list.Count > 0)
+	{
+		inventory.RemoveItem(list[list.Count - 1], 1);
+	}
+}
 }

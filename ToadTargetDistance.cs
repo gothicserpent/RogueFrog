@@ -14,18 +14,18 @@ using Pathfinding;
 public class ToadTargetDistance : MonoBehaviour
 {
 
-    Animator animator;
-    IAstarAI ai;
-    // Start is called before the first frame update
-    void Start()
-    {
-      animator = GetComponentInChildren<Animator>();
-      ai = GetComponent<IAstarAI>();
-    }
+Animator animator;
+IAstarAI ai;
+// Start is called before the first frame update
+void Start()
+{
+	animator = GetComponentInChildren<Animator>();
+	ai = GetComponent<IAstarAI>();
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-      animator.SetFloat("TargetDistance",ai.remainingDistance);
-    }
+// Update is called once per frame
+void Update()
+{
+	animator.SetFloat("TargetDistance",ai.remainingDistance);
+}
 }

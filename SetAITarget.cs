@@ -9,17 +9,17 @@ using Pathfinding;
 
 public class SetAITarget : MonoBehaviour
 {
-    IAstarAI ai;
+IAstarAI ai;
 
-    void Start()
-    {
-      ai = GetComponent<IAstarAI>();
-    }
+void Start()
+{
+	ai = GetComponent<IAstarAI>();
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-      if ( ai != null && ai.canMove) ai.destination = GameObject.FindWithTag("Player").transform.position;
-    }
+// Update is called once per frame
+void Update()
+{
+	if ( ai != null && ai.canMove) ai.destination = GameObject.FindWithTag("Player").transform.position;
+}
 
 }

@@ -13,34 +13,34 @@ using MoreMountains.TopDownEngine;
 
 public class DeathInstantiateObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    Health health;
-    protected bool instantiated = false;
+// Start is called before the first frame update
+Health health;
+protected bool instantiated = false;
 
-    [Header("Death")]
-    /// a gameobject (usually a particle system) to instantiate when the healthbar reaches zero
-    public GameObject InstantiatedOnDeath;
+[Header("Death")]
+/// a gameobject (usually a particle system) to instantiate when the healthbar reaches zero
+public GameObject InstantiatedOnDeath;
 
 
 
-    void Start()
-    {
-      health = GetComponent<Health>();
-    }
+void Start()
+{
+	health = GetComponent<Health>();
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-      CheckForDeath();
-    }
+// Update is called once per frame
+void Update()
+{
+	CheckForDeath();
+}
 
-    protected virtual void CheckForDeath()
-    {
-      if (health.CurrentHealth == 0 && InstantiatedOnDeath != null && !instantiated)
-      {
-        instantiated = true;
-        Instantiate(InstantiatedOnDeath, this.transform.position, this.transform.rotation);
-      }
-    }
+protected virtual void CheckForDeath()
+{
+	if (health.CurrentHealth == 0 && InstantiatedOnDeath != null && !instantiated)
+	{
+		instantiated = true;
+		Instantiate(InstantiatedOnDeath, this.transform.position, this.transform.rotation);
+	}
+}
 
 }

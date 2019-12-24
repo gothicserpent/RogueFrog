@@ -11,26 +11,26 @@ using MoreMountains.TopDownEngine;
 public class DestroyObject : MonoBehaviour
 {
 
-    void Start()
-    {
-    }
+void Start()
+{
+}
 
-    void Update()
-    {
-    }
+void Update()
+{
+}
 
-    // DESTROY THE OBJECT
+// DESTROY THE OBJECT
 
-    public virtual void SetInactive()
-    {
-      gameObject.SetActive(false);
-    }
+public virtual void SetInactive()
+{
+	gameObject.SetActive(false);
+}
 
-    // SHOW THE OBJECT
+// SHOW THE OBJECT
 
-    public virtual void SetActive()
-    {
-      gameObject.SetActive(true);
-    }
+public virtual void SetActive()
+{
+	gameObject.SetActive(true);
+}
 
 }

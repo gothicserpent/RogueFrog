@@ -9,22 +9,22 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+// Start is called before the first frame update
+void Start()
+{
 
-    }
+}
 
-    // Update is called once per frame
-    void Update()
-    {
+// Update is called once per frame
+void Update()
+{
 
-    }
+}
 
 
-    public void LoadScene(string level)
-    {
-        SceneManager.LoadScene(level, LoadSceneMode.Single);
-    }
+public void LoadScene(string level)
+{
+	SceneManager.LoadScene(level, LoadSceneMode.Single);
+}
 
 }

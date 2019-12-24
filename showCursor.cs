@@ -8,15 +8,15 @@ using UnityEngine;
 
 public class showCursor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-      if (!Cursor.visible) Cursor.visible = true;
-    }
+// Start is called before the first frame update
+void Start()
+{
+	if (!Cursor.visible) Cursor.visible = true;
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-      if (!Cursor.visible) Cursor.visible = true;
-    }
+// Update is called once per frame
+void Update()
+{
+	if (!Cursor.visible) Cursor.visible = true;
+}
 }
