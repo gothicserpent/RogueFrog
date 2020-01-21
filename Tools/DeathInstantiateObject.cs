@@ -15,7 +15,7 @@ public class DeathInstantiateObject : MonoBehaviour
 {
 // Start is called before the first frame update
 Health health;
-protected bool instantiated = false;
+private bool instantiated = false;
 
 [Header("Death")]
 /// a gameobject (usually a particle system) to instantiate when the healthbar reaches zero
@@ -26,12 +26,13 @@ public GameObject InstantiatedOnDeath;
 void Start()
 {
 	health = GetComponent<Health>();
+	InvokeRepeating("CheckForDeath", 0, 0.1F);
 }
 
 // Update is called once per frame
 void Update()
 {
-	CheckForDeath();
+	//CheckForDeath();
 }
 
 protected virtual void CheckForDeath()

@@ -11,6 +11,14 @@ namespace MoreMountains.InventoryEngine
 public class PersistentItemPicker : ItemPicker
 {
 
+int InitialQuantity;
+
+protected override void Start()
+{
+	base.Start();
+	InitialQuantity = Quantity; //need this value for PickSuccess quantity adding
+}
+
 /// <summary>
 /// Describes what happens when the object is successfully picked
 /// </summary>
@@ -23,22 +31,12 @@ protected override void PickSuccess()
 	//Debug.Log("Saving to: " + SaveManager.Instance.DetermineINIPath());
 
 	int inivalue = SaveManager.Instance.INIRead("Inventory",Item.ItemID);
-	inivalue+=1;
+	inivalue+=InitialQuantity;
 	SaveManager.Instance.INIWrite("Inventory",Item.ItemID,inivalue);
 
-	//INIParser ini = new INIParser();
-	// Open the save file. If the save file does not exist, INIParser automatically create
-	// one
-	//ini.Open(SaveManager.Instance.DetermineINIPath());
-	// Read the score. If the section/key does not exist, default score to 0
-	//if (_targetInventory.InventoryTypes == IventoryType.Main)
-	//int inivalue = ini.ReadValue("Inventory",Item.ItemID,0);
-	//inivalue += 1;
-	//ini.WriteValue("Inventory",Item.ItemID,inivalue);
-	//Debug.Log("test: " + _targetInventory.transform.parent.name);
-	//ini.Close();
-
-
+	//if the player is near the location of one of his last deaths, then the death section key should lower InitialQuantity in value. if the (value-InitialQuantity)==0, then the key should be deleted from the death section. if the death section has no keys left, it should be deleted. this will prevent the death sections from constantly respawning items
+	//public void PlayerDeathINIDelete(float x, float y, string Item)
+	SaveManager.Instance.PlayerDeathINIDelete(this.transform.position.x, this.transform.position.y, Item.ItemID, InitialQuantity);         //delete the value from the death section in the ini when it's picked up
 }
 
 }
