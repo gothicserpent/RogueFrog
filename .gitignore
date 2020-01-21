@@ -1,0 +1,4 @@
+#exclude the unity meta files
+*.meta
+#exclude google folder from repositories to hide add unit / ap id from malicious users
+Google/
