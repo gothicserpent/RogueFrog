@@ -20,13 +20,15 @@ namespace MoreMountains.TopDownEngine
 public class AIActionAStarMove : AIAction
 {
 
+Animator animator;
 IAstarAI ai;
 
 /// <summary>
 /// On init we grab our CharacterMovement ability
 /// </summary>
-protected override void Initialization()
+public override void Initialization()
 {
+	animator = GetComponentInChildren<Animator>();
 	ai = GetComponent<IAstarAI>();
 }
 
@@ -38,6 +40,10 @@ public override void PerformAction()
 	if(!ai.canMove)
 	{
 		ai.canMove = true;
+	}
+	if(!animator.GetBool("Moving"))
+	{
+		animator.SetBool("Moving",true);
 	}
 }
 }

@@ -10,7 +10,7 @@ namespace MoreMountains.TopDownEngine
 [AddComponentMenu("TopDown Engine/Character/AI/Pathed Projectile Player Target")]
 public class PathedProjectilePlayerTarget : MonoBehaviour
 {
-[Information("A GameObject with this component will move towards its target and get destroyed when it reaches it. Here you can define what object to instantiate on impact. Use the Initialize method to set its destination and speed.",MoreMountains.Tools.InformationAttribute.InformationType.Info,false)]
+[MMInformation("A GameObject with this component will move towards its target and get destroyed when it reaches it. Here you can define what object to instantiate on impact. Use the Initialize method to set its destination and speed.",MMInformationAttribute.InformationType.Info,false)]
 /// The effect to instantiate when the object gets destroyed
 public GameObject DestroyEffect;
 /// the destination of the projectile
