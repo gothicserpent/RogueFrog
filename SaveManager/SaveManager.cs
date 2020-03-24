@@ -21,7 +21,7 @@ public string CurrentScene;
 /// This persistent singleton handles game saving
 /// </summary>
 [AddComponentMenu("TopDown Engine/Managers/Save Manager")]
-public class SaveManager : Singleton<SaveManager>    //, MMEventListener<TopDownEngineEvent>, MMEventListener<MMGameEvent>
+public class SaveManager : MMSingleton<SaveManager>    //, MMEventListener<TopDownEngineEvent>, MMEventListener<MMGameEvent>
 {
 [Header("Inventory items (All the inventory items in Resources/Items. This *MUST* be added!!!)")]
 public InventoryItem[] InventoryItems;
@@ -443,7 +443,7 @@ public void INIKeyDelete(string section, string key)
 /// </summary>
 protected virtual void SaveGameSettings()
 {
-	SaveLoadManager.Save(SaveSettings, _saveFileName, _saveFolderName);
+	MMSaveLoadManager.Save(SaveSettings, _saveFileName, _saveFolderName);
 }
 
 /// <summary>
@@ -451,7 +451,7 @@ protected virtual void SaveGameSettings()
 /// </summary>
 protected virtual void LoadGameSettings()
 {
-	SaveSettings settings = (SaveSettings)SaveLoadManager.Load(_saveFileName, _saveFolderName);
+	SaveSettings settings = (SaveSettings)MMSaveLoadManager.Load(typeof(GameObject), _saveFileName, _saveFolderName);
 	if (settings != null) SaveSettings = settings;
 
 }
@@ -461,7 +461,7 @@ protected virtual void LoadGameSettings()
 /// </summary>
 protected virtual void ResetGameSettings()
 {
-	SaveLoadManager.DeleteSave(_saveFileName, _saveFolderName);
+	MMSaveLoadManager.DeleteSave(_saveFileName, _saveFolderName);
 }
 
 public virtual void SetCurrentScene(string scene) {

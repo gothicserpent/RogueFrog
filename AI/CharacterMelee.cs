@@ -19,7 +19,7 @@ namespace MoreMountains.TopDownEngine
 public class CharacterMelee : CharacterAbility
 {
 
-[Information("Can use the Degree / TargetDistance animation parameters to make AI follow in a realistic way.", MoreMountains.Tools.InformationAttribute.InformationType.Info, false)]
+[MMInformation("Can use the Degree / TargetDistance animation parameters to make AI follow in a realistic way.", MMInformationAttribute.InformationType.Info, false)]
 protected float _degree;
 protected float _targetDistance;
 protected int _degreeAnimationParameter;
