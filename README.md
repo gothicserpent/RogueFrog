@@ -13,7 +13,7 @@
 
 If you found a bug or have a new idea/feature:
 * If you just want to send a quick message about it, [message me on my discord server about it](https://discord.gg/dc3kbYg).
-* If you want to go to github to raise an issue, [report as an issue](https://github.com/gothicserpent/RogueFrog/issues/new).
+* If you want to go to github to raise an issue, [report as an issue](https://github.com/gothicserpent/RogueFrog/issues/new/choose).
 * If you're a programmer and want to make a code suggestion on github via pull request from a public fork of my project, [make a public fork](https://github.com/gothicserpent/RogueFrog/fork) and [make a pull request](https://github.com/gothicserpent/RogueFrog/pull/new).
 
 ## Support or feedback
@@ -37,7 +37,7 @@ Thanks to all the people who have contributed ideas, patches, bugs report, featu
 
 ## Contributing
 
-If you want to contribute to the project and make it better, your help is very welcome. You can contribute by [making a suggestion to me on my discord server](https://discord.gg/dc3kbYg) or by [raising a github issue](https://github.com/gothicserpent/RogueFrog/issues/new) or by [making a public fork](https://github.com/gothicserpent/RogueFrog/fork) and [making a pull request to my codebase](https://github.com/gothicserpent/RogueFrog/pull/new).
+If you want to contribute to the project and make it better, your help is very welcome. You can contribute by [making a suggestion to me on my discord server](https://discord.gg/dc3kbYg) or by [raising a github issue](https://github.com/gothicserpent/RogueFrog/issues/new/choose) or by [making a public fork](https://github.com/gothicserpent/RogueFrog/fork) and [making a pull request to my codebase](https://github.com/gothicserpent/RogueFrog/pull/new).
 
 For more information about pull requests, you can find [pull request general information on the github site](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests), see the [git-request-pull documentation](https://git-scm.com/docs/git-request-pull), browse a [basic guide to pull requests](https://github.com/MarcDiethelm/contributing), or browse a [long guide to pull requests](https://github.com/firstcontributions/first-contributions).
 
